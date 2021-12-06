@@ -2,6 +2,7 @@ import sys
 
 
 class Lanternfish:
+
     def __init__(self, lst, gen1, gen2):
         self.fish = lst.copy()
         self.sieve = len(lst)
@@ -20,8 +21,8 @@ class Lanternfish:
     def iterate(self):
         for i, f in enumerate(self.fish[:]):
             if f == 0:
-                self.fish.append(8)
-                self.fish[i] = 6
+                self.fish.append(self.gen2 - 1)
+                self.fish[i] = self.gen1 - 1
             else:
                 self.fish[i] -= 1
 

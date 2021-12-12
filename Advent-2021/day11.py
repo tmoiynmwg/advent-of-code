@@ -1,4 +1,4 @@
-import sys, math
+import sys
 
 
 class Octopodes:
@@ -13,7 +13,6 @@ class Octopodes:
 		self.flash_threshold = 10
 		self.flash_count = 0
 		self.synchronized = False
-		#self.marked = [[False] * self.width for _ in range(self.height)]
 
 	def __str__(self):
 		output = ''

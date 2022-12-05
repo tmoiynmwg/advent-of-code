@@ -10,9 +10,11 @@ stacks = []
 def move(count, source, dest, maintain_order):
     #print(stacks)
     if maintain_order:
+        # Part 1
         stacks[dest].extend(stacks[source][-count:])
         del stacks[source][-count:]
     else:
+        # Part 2
         for _ in range(count):
             stacks[dest].append(stacks[source].pop())
 

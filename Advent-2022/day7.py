@@ -54,7 +54,7 @@ class Directory:
     def small_dir_sum(size):
         return sum(s for s in Directory.sizes if s <= size)
 
-    def smallest_sufficient_dir(size):
+    def min_suff_dir(size):
         return min(s for s in Directory.sizes if s >= size)
 
 
@@ -62,8 +62,8 @@ def main():
     root = Directory.create_directories('day7-input')
     used_space = root.get_size()
     space_needed = used_space - 40000000
-    print(Directory.small_dir_sum(100000))                   # Part 1
-    print(Directory.smallest_sufficient_dir(space_needed))   # Part 2
+    print(Directory.small_dir_sum(100000))          # Part 1
+    print(Directory.min_suff_dir(space_needed))     # Part 2
 
 
 if __name__ == "__main__":

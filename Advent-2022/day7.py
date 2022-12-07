@@ -52,10 +52,10 @@ class Directory:
         return root
 
     def small_dir_sum(size):
-        return sum([s for s in Directory.sizes if s <= size])
+        return sum(s for s in Directory.sizes if s <= size)
 
     def smallest_sufficient_dir(size):
-        return min([s for s in Directory.sizes if s >= size])
+        return min(s for s in Directory.sizes if s >= size)
 
 
 def main():

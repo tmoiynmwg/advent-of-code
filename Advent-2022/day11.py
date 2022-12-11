@@ -1,5 +1,5 @@
 import sys
-import math
+import numpy
 
 
 WORRY_DECAY = 1
@@ -57,7 +57,7 @@ class Monkey:
 
 def main():
 	divisors = [5, 2, 13, 19, 11, 3, 7, 17]
-	max_worry = math.lcm(divisors)
+	max_worry = numpy.lcm.reduce(divisors)
 	monkeys = [Monkey([78, 53, 89, 51, 52, 59, 58, 85], 0, divisors[0]),
 			   Monkey(							  [64], 1, divisors[1]),
 			   Monkey(				  [71, 93, 65, 82], 2, divisors[2]),
@@ -75,7 +75,7 @@ def main():
 	monkeys[6].set_targets(monkeys[7], monkeys[0])
 	monkeys[7].set_targets(monkeys[2], monkeys[5])
 
-	rounds = sys.argv[1]
+	rounds = int(sys.argv[1])
 	for _ in range(rounds):
 		for monkey in monkeys:
 			monkey.turn(max_worry)
